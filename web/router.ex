@@ -1,6 +1,6 @@
 defmodule AppsignalPhoenixExample.Router do
-  use Appsignal.Phoenix
   use AppsignalPhoenixExample.Web, :router
+  use Appsignal.Phoenix
 
   pipeline :browser do
     plug :accepts, ["html"]
