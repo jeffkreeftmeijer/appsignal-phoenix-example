@@ -1,8 +1,8 @@
 defmodule AppsignalPhoenixExample.Router do
   use AppsignalPhoenixExample.Web, :router
-  use Appsignal.Phoenix
 
   pipeline :browser do
+    use Appsignal.Phoenix
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
