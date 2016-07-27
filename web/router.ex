@@ -1,4 +1,5 @@
 defmodule AppsignalPhoenixExample.Router do
+  use Appsignal.Phoenix
   use AppsignalPhoenixExample.Web, :router
 
   pipeline :browser do
