@@ -37,6 +37,8 @@ defmodule AppsignalPhoenixExample.Endpoint do
     store: :cookie,
     key: "_appsignal_phoenix_example_key",
     signing_salt: "fha+Tjis"
+    
+  use Appsignal.Phoenix
 
   plug AppsignalPhoenixExample.Router
 end
