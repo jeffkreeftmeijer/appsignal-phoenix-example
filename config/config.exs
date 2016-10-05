@@ -15,7 +15,8 @@ config :appsignal_phoenix_example, AppsignalPhoenixExample.Endpoint,
   secret_key_base: "JHtG9YwEUolel+wP5NJis/m9VG/FidOqnlCEafm7dZOBQG9qFUjEYM5baLiE12oe",
   render_errors: [view: AppsignalPhoenixExample.ErrorView, accepts: ~w(html json)],
   pubsub: [name: AppsignalPhoenixExample.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  instrumenters: [Appsignal.Phoenix.Instrumenter]
 
 # Configures Elixir's Logger
 config :logger, :console,
