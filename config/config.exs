@@ -32,6 +32,9 @@ config :phoenix, :template_engines,
   eex: Appsignal.Phoenix.Template.EExEngine,
   exs: Appsignal.Phoenix.Template.ExsEngine
 
+config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
+  loggers: [Appsignal.Ecto]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
