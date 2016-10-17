@@ -19,6 +19,12 @@ config :appsignal_phoenix_example, AppsignalPhoenixExample.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Add AppSignal env and version information
+config :appsignal, :config,
+  env: :prod,
+  revision: Mix.Project.config[:version]
+
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
