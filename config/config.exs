@@ -25,7 +25,8 @@ config :logger, :console,
 
 config :appsignal, :config,
   name: :appsignal_phoenix_example,
-  push_api_key: "00000000-0000-0000-0000-000000000000"
+  push_api_key: "00000000-0000-0000-0000-000000000000",
+  ignore_actions: ["AppsignalPhoenixExample.PageController#ignored"]
 
 config :phoenix, :template_engines,
   eex: Appsignal.Phoenix.Template.EExEngine,

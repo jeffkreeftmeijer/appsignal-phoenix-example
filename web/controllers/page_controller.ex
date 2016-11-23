@@ -8,4 +8,8 @@ defmodule AppsignalPhoenixExample.PageController do
   def exception(conn, _params) do
     raise "ecxeption!"
   end
+
+  def ignored(conn, _params) do
+    render conn, "index.html"
+  end
 end

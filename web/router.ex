@@ -18,6 +18,7 @@ defmodule AppsignalPhoenixExample.Router do
 
     get "/", PageController, :index
     get "/exception", PageController, :exception
+    get "/ignored", PageController, :ignored
   end
 
   # Other scopes may use custom stacks.
