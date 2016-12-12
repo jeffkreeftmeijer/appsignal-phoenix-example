@@ -18,6 +18,8 @@ defmodule AppsignalPhoenixExample.Router do
 
     get "/", PageController, :index
     get "/exception", PageController, :exception
+
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
