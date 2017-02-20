@@ -1,6 +1,7 @@
 %{"appsignal": {:hex, :appsignal, "0.12.2", "d774dec06748011ee2fb0cd7852ee13321f4da08adc1863157b0fb397fda4f14", [:make, :mix], [{:decorator, "~> 1.0", [hex: :decorator, optional: false]}, {:httpoison, "~> 0.11", [hex: :httpoison, optional: false]}, {:phoenix, "~> 1.2.0", [hex: :phoenix, optional: true]}]},
   "certifi": {:hex, :certifi, "0.7.0", "861a57f3808f7eb0c2d1802afeaae0fa5de813b0df0979153cbafcd853ababaf", [:rebar3], []},
   "connection": {:hex, :connection, "1.0.4", "a1cae72211f0eef17705aaededacac3eb30e6625b04a6117c1b2db6ace7d5976", [:mix], []},
+  "corsica": {:hex, :corsica, "0.5.0", "eb5b2fccc5bc4f31b8e2b77dd15f5f302aca5d63286c953e8e916f806056d50c", [:mix], [{:cowboy, ">= 1.0.0", [hex: :cowboy, optional: false]}, {:plug, ">= 0.9.0", [hex: :plug, optional: false]}]},
   "cowboy": {:hex, :cowboy, "1.1.2", "61ac29ea970389a88eca5a65601460162d370a70018afe6f949a29dca91f3bb0", [:rebar3], [{:cowlib, "~> 1.0.2", [hex: :cowlib, optional: false]}, {:ranch, "~> 1.3.2", [hex: :ranch, optional: false]}]},
   "cowlib": {:hex, :cowlib, "1.0.2", "9d769a1d062c9c3ac753096f868ca121e2730b9a377de23dec0f7e08b1df84ee", [:make], []},
   "db_connection": {:hex, :db_connection, "1.0.0-rc.5", "1d9ab6e01387bdf2de7a16c56866971f7c2f75aea7c69cae2a0346e4b537ae0d", [:mix], [{:connection, "~> 1.0.2", [hex: :connection, optional: false]}, {:poolboy, "~> 1.5", [hex: :poolboy, optional: true]}, {:sbroker, "~> 1.0.0-beta.3", [hex: :sbroker, optional: true]}]},

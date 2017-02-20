@@ -18,7 +18,7 @@ defmodule AppsignalPhoenixExample.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {AppsignalPhoenixExample, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+     applications: [:corsica, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :appsignal]]
   end
 
@@ -38,6 +38,7 @@ defmodule AppsignalPhoenixExample.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     {:corsica, "~> 0.5"},
      {:appsignal, "~> 0.0"}]
   end
 

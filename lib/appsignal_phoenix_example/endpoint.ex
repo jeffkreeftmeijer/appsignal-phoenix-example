@@ -21,6 +21,7 @@ defmodule AppsignalPhoenixExample.Endpoint do
 
   plug Plug.RequestId
   plug Plug.Logger
+  plug Corsica, origins: "http://foo.com"
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
