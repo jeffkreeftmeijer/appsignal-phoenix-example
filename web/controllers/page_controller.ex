@@ -8,4 +8,9 @@ defmodule AppsignalPhoenixExample.PageController do
   def exception(_conn, _params) do
     raise "exception!"
   end
+
+  def session(conn, _params) do
+    conn = put_session(conn, :time, Time.utc_now())
+    text(conn, inspect conn.private[:plug_session])
+  end
 end
