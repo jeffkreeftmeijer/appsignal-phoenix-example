@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -eu
+
+export PORT=4000
+export MIX_ENV=prod
+
+# Building from scratch just be on the safe side
+rm -rf _build deps
+mix deps.get
+
+# Compile app itself
+mix compile
+# Assets
+./node_modules/brunch/bin/brunch b -p
+mix phoenix.digest
+# Build release
+mix release
