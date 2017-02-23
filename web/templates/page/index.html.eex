@@ -4,4 +4,5 @@
   <li><a href="/timeout">/timeout</a></li>
   <li><a href="/decorated">/decorated</a></li>
   <li><a href="/notfound">/notfound</a></li>
+  <li><a href="/users">/users</a></li>
 </ul>

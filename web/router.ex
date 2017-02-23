@@ -21,6 +21,7 @@ defmodule AppsignalPhoenixExample.Router do
     get "/exception", PageController, :exception
     get "/timeout", PageController, :timeout
     get "/decorator", PageController, :decorator
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
