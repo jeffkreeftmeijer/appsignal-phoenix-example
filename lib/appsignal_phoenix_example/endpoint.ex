@@ -38,5 +38,6 @@ defmodule AppsignalPhoenixExample.Endpoint do
     key: "_appsignal_phoenix_example_key",
     signing_salt: "sYR8172I"
 
+  use Appsignal.Phoenix
   plug AppsignalPhoenixExample.Router
 end
