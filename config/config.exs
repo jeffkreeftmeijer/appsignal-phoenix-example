@@ -5,6 +5,10 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :appsignal_phoenix_example,
+  ecto_repos: [AppsignalPhoenixExample.Repo]
+
 # Configures the endpoint
 config :appsignal_phoenix_example, AppsignalPhoenixExample.Endpoint,
   url: [host: "localhost"],

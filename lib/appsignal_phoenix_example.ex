@@ -8,6 +8,8 @@ defmodule AppsignalPhoenixExample do
 
     # Define workers and child supervisors to be supervised
     children = [
+      # Start the Ecto repository
+      supervisor(AppsignalPhoenixExample.Repo, []),
       # Start the endpoint when the application starts
       supervisor(AppsignalPhoenixExample.Endpoint, []),
       # Start your own worker by calling: AppsignalPhoenixExample.Worker.start_link(arg1, arg2, arg3)

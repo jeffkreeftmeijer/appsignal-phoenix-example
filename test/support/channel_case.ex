@@ -20,6 +20,11 @@ defmodule AppsignalPhoenixExample.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
+      alias AppsignalPhoenixExample.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+
 
       # The default endpoint for testing
       @endpoint AppsignalPhoenixExample.Endpoint
@@ -27,6 +32,11 @@ defmodule AppsignalPhoenixExample.ChannelCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AppsignalPhoenixExample.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(AppsignalPhoenixExample.Repo, {:shared, self()})
+    end
 
     :ok
   end

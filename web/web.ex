@@ -18,13 +18,21 @@ defmodule AppsignalPhoenixExample.Web do
 
   def model do
     quote do
-      # Define common model functionality
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
     end
   end
 
   def controller do
     quote do
       use Phoenix.Controller
+
+      alias AppsignalPhoenixExample.Repo
+      import Ecto
+      import Ecto.Query
 
       import AppsignalPhoenixExample.Router.Helpers
       import AppsignalPhoenixExample.Gettext
@@ -56,6 +64,10 @@ defmodule AppsignalPhoenixExample.Web do
   def channel do
     quote do
       use Phoenix.Channel
+
+      alias AppsignalPhoenixExample.Repo
+      import Ecto
+      import Ecto.Query
       import AppsignalPhoenixExample.Gettext
     end
   end

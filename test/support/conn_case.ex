@@ -20,6 +20,11 @@ defmodule AppsignalPhoenixExample.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
+      alias AppsignalPhoenixExample.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+
       import AppsignalPhoenixExample.Router.Helpers
 
       # The default endpoint for testing
@@ -28,6 +33,11 @@ defmodule AppsignalPhoenixExample.ConnCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AppsignalPhoenixExample.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(AppsignalPhoenixExample.Repo, {:shared, self()})
+    end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
