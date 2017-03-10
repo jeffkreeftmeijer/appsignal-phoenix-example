@@ -15,4 +15,9 @@ defmodule AppsignalPhoenixExample.PageController do
   def exception(_conn, _params) do
     raise("Exception!")
   end
+
+  def timeout(_conn, _params) do
+    Task.async(fn -> :timer.sleep(200) end)
+    |> Task.await(100)
+  end
 end
