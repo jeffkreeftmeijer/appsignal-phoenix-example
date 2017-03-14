@@ -15,4 +15,14 @@ defmodule AppsignalPhoenixExample.PageController do
   def exception(_conn, _params) do
     raise("Exception!")
   end
+
+  def instrumentation(conn, params) do
+    time = :rand.uniform(3000)
+
+    result = Appsignal.Instrumentation.Helpers.instrument("sleep.timer", "Some slow backend call", fn() ->
+      :timer.sleep(time)
+    end
+
+    text conn, "Slept for #{time}ms."
+  end
 end

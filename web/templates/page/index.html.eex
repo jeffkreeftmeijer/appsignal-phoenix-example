@@ -1,4 +1,5 @@
 <ul>
   <li><a href="/slow">/slow</a></li>
   <li><a href="/exception">/exception</a></li>
+  <li><a href="/instrumentation">/instrumentation</a></li>
 </ul>
