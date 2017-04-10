@@ -23,7 +23,10 @@ defmodule AppsignalPhoenixExample.PageController do
   end
 
   def decorator(conn, _params) do
-    text conn, "Slept for #{decorated()}ms."
+    task = Task.async(fn -> decorated() end)
+    time = Task.await(task)
+
+    text conn, "Slept for #{time}ms."
   end
 
   @decorate transaction_event()
