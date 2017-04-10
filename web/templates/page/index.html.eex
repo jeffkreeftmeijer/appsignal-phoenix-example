@@ -2,4 +2,5 @@
   <li><a href="/slow">/slow</a></li>
   <li><a href="/exception">/exception</a></li>
   <li><a href="/timeout">/timeout</a></li>
+  <li><a href="/decorated">/decorated</a></li>
 </ul>
