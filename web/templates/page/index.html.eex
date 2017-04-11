@@ -3,4 +3,5 @@
   <li><a href="/exception">/exception</a></li>
   <li><a href="/timeout">/timeout</a></li>
   <li><a href="/decorated">/decorated</a></li>
+  <li><a href="/notfound">/notfound</a></li>
 </ul>
