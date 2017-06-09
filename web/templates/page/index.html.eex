@@ -5,3 +5,8 @@
   <li><a href="/decorated">/decorated</a></li>
   <li><a href="/notfound">/notfound</a></li>
 </ul>
+
+<form method="post">
+  <input name="pin" value="1234">
+  <button>Submit!</button>
+</form>
