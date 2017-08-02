@@ -16,6 +16,8 @@ defmodule AppsignalPhoenixExampleWeb.Router do
   scope "/", AppsignalPhoenixExampleWeb do
     pipe_through :browser # Use the default browser stack
 
+    resources "/users", UserController
+
     get "/", PageController, :index
   end
 
