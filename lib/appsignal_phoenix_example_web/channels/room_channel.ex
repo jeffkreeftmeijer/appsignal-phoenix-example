@@ -1,6 +1,8 @@
 defmodule AppsignalPhoenixExampleWeb.RoomChannel do
   use AppsignalPhoenixExampleWeb, :channel
+  use Appsignal.Instrumentation.Decorators
 
+  @decorate channel_action()
   def join("room:lobby", payload, socket) do
     if authorized?(payload) do
       {:ok, socket}

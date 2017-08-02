@@ -56,3 +56,5 @@ config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
   database: "appsignal_phoenix_example_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :appsignal, :config, active: true

@@ -38,6 +38,7 @@ defmodule AppsignalPhoenixExampleWeb.Endpoint do
     key: "_appsignal_phoenix_example_key",
     signing_salt: "S1JKVjSw"
 
+  use Appsignal.Phoenix
   plug AppsignalPhoenixExampleWeb.Router
 
   @doc """
