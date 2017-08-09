@@ -4,6 +4,7 @@ defmodule AppsignalPhoenixExample.User do
   schema "users" do
     field :name, :string
     field :email, :string
+    has_many :posts, AppsignalPhoenixExample.Post
 
     timestamps()
   end

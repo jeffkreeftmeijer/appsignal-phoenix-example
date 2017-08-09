@@ -19,6 +19,10 @@ defmodule Query do
   def for_id(queryable, id) do
     from m in queryable, where: m.id == ^id
   end
+
+  def with_posts(queryable) do
+    from m in queryable, preload: [:posts]
+  end
 end
 
 defmodule Backend do
@@ -28,6 +32,7 @@ defmodule Backend do
   def fetch do
     User
     |> for_id(1)
+    |> with_posts
     |> Repo.all
   end
 end
