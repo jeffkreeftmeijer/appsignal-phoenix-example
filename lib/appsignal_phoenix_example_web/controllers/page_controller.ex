@@ -8,17 +8,18 @@ defmodule AppsignalPhoenixExampleWeb.PageController do
 
   def tasks(conn, _params) do
     my_task = fn() ->
-      random = :rand.uniform(1000)
+      random = :rand.uniform(100)
       :timer.sleep(random)
     end
 
-    one = task("one", my_task)
-    two = task("two", my_task)
-    three = task("three", my_task)
+    tasks = Enum.map(1..100, fn(n) ->
+      task("task_#{n}", my_task)
+    end)
 
-    resolve(one)
-    resolve(two)
-    resolve(three)
+    Enum.each(tasks, fn(task) ->
+      resolve(task)
+      IO.puts(".")
+    end)
 
     text conn, "Done!"
   end
