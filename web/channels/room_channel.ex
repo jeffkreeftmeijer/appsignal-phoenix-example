@@ -30,9 +30,12 @@ defmodule Backend do
   import Query
 
   def fetch do
-    User
-    |> for_id(1)
-    |> with_posts
-    |> Repo.all
+    Task.async(fn() ->
+      User
+      |> for_id(1)
+      |> with_posts
+      |> Repo.all
+    end)
+    |> Task.await
   end
 end
