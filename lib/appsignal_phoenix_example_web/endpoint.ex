@@ -1,3 +1,17 @@
+defmodule ExceptionPlug do
+  import Plug.Conn
+
+  def init(opts), do: opts
+
+  def call(%{params: %{"exception" => exception}} = conn, _) do
+    raise(exception)
+    conn
+  end
+  def call(conn, _) do
+    conn
+  end
+end
+
 defmodule AppsignalPhoenixExampleWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :appsignal_phoenix_example
 
@@ -39,6 +53,8 @@ defmodule AppsignalPhoenixExampleWeb.Endpoint do
     signing_salt: "S1JKVjSw"
 
   use Appsignal.Phoenix
+  plug ExceptionPlug
+
   plug AppsignalPhoenixExampleWeb.Router
 
   @doc """
