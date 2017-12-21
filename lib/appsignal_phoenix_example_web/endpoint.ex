@@ -1,3 +1,10 @@
+defmodule ExceptionModule do
+  def break(conn) do
+    # Will raise a MatchError
+    %{missing_key: _} = conn
+  end
+end
+
 defmodule AppsignalPhoenixExampleWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :appsignal_phoenix_example
 
@@ -39,6 +46,13 @@ defmodule AppsignalPhoenixExampleWeb.Endpoint do
     signing_salt: "S1JKVjSw"
 
   use Appsignal.Phoenix
+
+  plug :exception_plug
+
+  defp exception_plug(conn, _) do
+    ExceptionModule.break(conn)
+  end
+
   plug AppsignalPhoenixExampleWeb.Router
 
   @doc """
