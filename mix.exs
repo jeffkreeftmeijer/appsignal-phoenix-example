@@ -39,7 +39,7 @@ defmodule AppsignalPhoenixExample.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:distillery, "~> 1.0"},
-     {:appsignal, "~> 0.0"}]
+     {:appsignal, "~> 1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

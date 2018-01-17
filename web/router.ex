@@ -16,6 +16,8 @@ defmodule AppsignalPhoenixExample.Router do
   scope "/", AppsignalPhoenixExample do
     pipe_through :browser # Use the default browser stack
 
+    get "/test", SampleController, :test
+
     get "/", PageController, :index
     get "/exception", PageController, :exception
     get "/session", PageController, :session

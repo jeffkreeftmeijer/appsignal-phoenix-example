@@ -22,9 +22,12 @@ config :appsignal_phoenix_example, AppsignalPhoenixExample.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
+config :logger, :level, :info
 
 config :appsignal, :config,
   active: true,
+  env: Mix.env,
+  debug: true,
   name: :appsignal_phoenix_example,
   push_api_key: "00000000-0000-0000-0000-000000000000"
 

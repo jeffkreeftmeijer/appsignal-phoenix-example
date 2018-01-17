@@ -1,0 +1,6 @@
+<%= gettext("You have to confirm your account before continuing.") %>
+&nbsp;
+<%= link(
+    gettext("Resend confirmation email"),
+    method: :post,
+    to: "/foo") %>
