@@ -12,6 +12,39 @@ defmodule ExceptionPlug do
   end
 end
 
+defmodule SlowPlugWithInstrumentationHelpers do
+  import Plug.Conn
+  import Appsignal.Instrumentation.Helpers, only: [instrument: 3]
+
+  def init(opts), do: opts
+
+  def call(%{params: %{"slow" => "helpers"}} = conn, _) do
+    instrument("timer.sleep", "Sleeping", fn() ->
+      :timer.sleep(1000)
+    end)
+    conn
+  end
+  def call(conn, _) do
+    conn
+  end
+end
+
+defmodule SlowPlugWithDecorators do
+  import Plug.Conn
+  use Appsignal.Instrumentation.Decorators
+
+  def init(opts), do: opts
+
+  @decorate transaction_event()
+  def call(%{params: %{"slow" => "decorators"}} = conn, _) do
+    :timer.sleep(1000)
+    conn
+  end
+  def call(conn, _) do
+    conn
+  end
+end
+
 defmodule AppsignalPhoenixExampleWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :appsignal_phoenix_example
 
@@ -54,6 +87,8 @@ defmodule AppsignalPhoenixExampleWeb.Endpoint do
 
   use Appsignal.Phoenix
   plug ExceptionPlug
+  plug SlowPlugWithInstrumentationHelpers
+  plug SlowPlugWithDecorators
 
   plug AppsignalPhoenixExampleWeb.Router
 
