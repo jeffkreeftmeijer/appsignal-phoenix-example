@@ -30,6 +30,9 @@ config :phoenix, :template_engines,
 config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
   loggers: [Appsignal.Ecto, Ecto.LogEntry]
 
+config :verk_web, VerkWeb.Endpoint,
+  url: [path: "/verk"]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

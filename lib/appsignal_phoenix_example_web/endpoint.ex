@@ -1,5 +1,6 @@
 defmodule AppsignalPhoenixExampleWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :appsignal_phoenix_example
+  use VerkWeb.Mount, path: "/verk"
 
   socket "/socket", AppsignalPhoenixExampleWeb.UserSocket
 

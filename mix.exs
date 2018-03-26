@@ -42,6 +42,7 @@ defmodule AppsignalPhoenixExample.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:appsignal, "~> 1.0"},
+      {:verk_web, "~> 1.0"},
       {:verk, "~> 1.0"}
     ]
   end
