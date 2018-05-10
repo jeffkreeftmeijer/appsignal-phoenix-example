@@ -13,7 +13,7 @@ defmodule AppsignalPhoenixExample.Application do
       # Start the endpoint when the application starts
       supervisor(AppsignalPhoenixExampleWeb.Endpoint, []),
       # Start your own worker by calling: AppsignalPhoenixExample.Worker.start_link(arg1, arg2, arg3)
-      # worker(AppsignalPhoenixExample.Worker, [arg1, arg2, arg3]),
+      AppsignalPhoenixExample.RandomNumberProbe
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
