@@ -50,7 +50,6 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   database: "appsignal_phoenix_example_dev",

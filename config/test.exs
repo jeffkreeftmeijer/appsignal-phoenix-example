@@ -11,7 +11,6 @@ config :logger, level: :warn
 
 # Configure your database
 config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   database: "appsignal_phoenix_example_test",

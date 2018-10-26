@@ -1,5 +1,7 @@
 defmodule AppsignalPhoenixExample.Repo do
-  use Ecto.Repo, otp_app: :appsignal_phoenix_example
+  use Ecto.Repo,
+    otp_app: :appsignal_phoenix_example,
+    adapter: Ecto.Adapters.Postgres
 
   @doc """
   Dynamically loads the repository url from the
