@@ -1,12 +1,17 @@
 defmodule AppsignalPhoenixExampleWeb.UserController do
   use AppsignalPhoenixExampleWeb, :controller
+  use Appsignal.Instrumentation.Decorators
 
   alias AppsignalPhoenixExample.Accounts
   alias AppsignalPhoenixExample.Accounts.User
 
   def index(conn, _params) do
-    users = Accounts.list_users()
-    render(conn, "index.html", users: users)
+    render(conn, "index.html", users: get_user_list())
+  end
+
+  @decorate transaction_event("get_user_list")
+  defp get_user_list() do
+    Accounts.list_users()
   end
 
   def new(conn, _params) do
