@@ -16,6 +16,14 @@ defmodule AppsignalPhoenixExample.Application do
       # worker(AppsignalPhoenixExample.Worker, [arg1, arg2, arg3]),
     ]
 
+    Telemetry.attach(
+      "appsignal-ecto",
+      [:appsignal_phoenix_example, :repo, :query],
+      Appsignal.Ecto,
+      :handle_event,
+      nil
+    )
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: AppsignalPhoenixExample.Supervisor]
