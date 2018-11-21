@@ -1,6 +1,7 @@
 <ul>
   <li><%= link "raise", to: exception_path(@conn, :raise) %></li>
   <li><%= link "exit", to: exception_path(@conn, :exit) %></li>
+  <li><a href="/exceptions/404">404</a></li>
   <li><%= link "proc_raise", to: exception_path(@conn, :proc_raise) %></li>
   <li><%= link "proc_exit", to: exception_path(@conn, :proc_exit) %></li>
 </ul>
