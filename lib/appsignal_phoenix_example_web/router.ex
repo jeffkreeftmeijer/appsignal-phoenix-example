@@ -18,6 +18,9 @@ defmodule AppsignalPhoenixExampleWeb.Router do
 
     resources "/users", UserController
 
+    get "/exceptions", ExceptionController, :index
+    get "/exceptions/raise", ExceptionController, :raise
+
     get "/", PageController, :index
   end
 

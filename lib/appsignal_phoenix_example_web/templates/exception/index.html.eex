@@ -1,0 +1,3 @@
+<ul>
+  <li><%= link "raise", to: exception_path(@conn, :raise) %></li>
+</ul>
