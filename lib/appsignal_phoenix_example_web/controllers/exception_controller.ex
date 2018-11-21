@@ -8,5 +8,9 @@ defmodule AppsignalPhoenixExampleWeb.ExceptionController do
   def raise(conn, _) do
     raise "Exception!"
   end
+
+  def exit(conn, _) do
+    exit(:exit)
+  end
 end
 
