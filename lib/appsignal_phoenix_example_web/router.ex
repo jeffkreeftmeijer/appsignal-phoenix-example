@@ -23,6 +23,7 @@ defmodule AppsignalPhoenixExampleWeb.Router do
     get "/exceptions/exit", ExceptionController, :exit
     get "/exceptions/proc_raise", ExceptionController, :proc_raise
     get "/exceptions/proc_exit", ExceptionController, :proc_exit
+    get "/exceptions/timeout", ExceptionController, :timeout
 
     get "/", PageController, :index
   end

@@ -28,4 +28,10 @@ defmodule AppsignalPhoenixExampleWeb.ExceptionController do
 
     text(conn, "ok!")
   end
+
+  def timeout(conn, _) do
+    Task.async(fn -> :timer.sleep(10) end) |> Task.await(1)
+
+    text(conn, "ok!")
+  end
 end
