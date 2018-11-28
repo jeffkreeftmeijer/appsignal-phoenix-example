@@ -5,4 +5,6 @@
   <li><%= link "proc_raise", to: exception_path(@conn, :proc_raise) %></li>
   <li><%= link "proc_exit", to: exception_path(@conn, :proc_exit) %></li>
   <li><%= link "timeout", to: exception_path(@conn, :timeout) %></li>
+  <li><%= link "template", to: exception_path(@conn, :template) %></li>
+  <li><%= link "template_error", to: exception_path(@conn, :template_error) %></li>
 </ul>

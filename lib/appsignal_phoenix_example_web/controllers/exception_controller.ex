@@ -34,4 +34,12 @@ defmodule AppsignalPhoenixExampleWeb.ExceptionController do
 
     text(conn, "ok!")
   end
+
+  def template(conn, _) do
+    render(conn, "undef.html")
+  end
+
+  def template_error(conn, _) do
+    render(conn, "error.html")
+  end
 end
