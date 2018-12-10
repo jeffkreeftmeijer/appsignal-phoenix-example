@@ -26,6 +26,7 @@ defmodule AppsignalPhoenixExampleWeb.Router do
     get "/exceptions/timeout", ExceptionController, :timeout
     get "/exceptions/template", ExceptionController, :template
     get "/exceptions/template_error", ExceptionController, :template_error
+    get "/exceptions/ecto_no_results", ExceptionController, :ecto_no_results
 
     get "/", PageController, :index
   end

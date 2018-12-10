@@ -7,4 +7,5 @@
   <li><%= link "timeout", to: exception_path(@conn, :timeout) %></li>
   <li><%= link "template", to: exception_path(@conn, :template) %></li>
   <li><%= link "template_error", to: exception_path(@conn, :template_error) %></li>
+  <li><%= link "ecto_no_results", to: exception_path(@conn, :ecto_no_results) %></li>
 </ul>

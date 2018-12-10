@@ -42,4 +42,8 @@ defmodule AppsignalPhoenixExampleWeb.ExceptionController do
   def template_error(conn, _) do
     render(conn, "error.html")
   end
+
+  def ecto_no_results(_conn, _) do
+    AppsignalPhoenixExample.Accounts.get_user!(123)
+  end
 end
