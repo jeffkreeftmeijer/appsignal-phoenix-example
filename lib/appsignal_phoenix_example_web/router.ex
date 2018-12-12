@@ -1,3 +1,17 @@
+defmodule ExceptionPlug do
+  import Plug.Conn
+
+  def init(opts), do: opts
+
+  def call(%{params: %{"exception" => "no_results"}} = conn, _) do
+    AppsignalPhoenixExample.Accounts.get_user!(123)
+    conn
+  end
+  def call(conn, _) do
+    conn
+  end
+end
+
 defmodule AppsignalPhoenixExampleWeb.Router do
   use AppsignalPhoenixExampleWeb, :router
 
@@ -7,6 +21,7 @@ defmodule AppsignalPhoenixExampleWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug ExceptionPlug
   end
 
   pipeline :api do
