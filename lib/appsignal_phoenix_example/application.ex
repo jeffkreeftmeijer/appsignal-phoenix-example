@@ -16,11 +16,10 @@ defmodule AppsignalPhoenixExample.Application do
       # worker(AppsignalPhoenixExample.Worker, [arg1, arg2, arg3]),
     ]
 
-    Telemetry.attach(
+    :telemetry.attach(
       "appsignal-ecto",
       [:appsignal_phoenix_example, :repo, :query],
-      Appsignal.Ecto,
-      :handle_event,
+      &Appsignal.Ecto.handle_event/4,
       nil
     )
 
