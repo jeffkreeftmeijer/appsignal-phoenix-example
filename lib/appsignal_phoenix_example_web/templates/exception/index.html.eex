@@ -1,0 +1,11 @@
+<ul>
+  <li><%= link "raise", to: Routes.exception_path(@conn, :raise) %></li>
+  <li><%= link "exit", to: Routes.exception_path(@conn, :exit) %></li>
+  <li><a href="/exceptions/404">404</a></li>
+  <li><%= link "proc_raise", to: Routes.exception_path(@conn, :proc_raise) %></li>
+  <li><%= link "proc_exit", to: Routes.exception_path(@conn, :proc_exit) %></li>
+  <li><%= link "timeout", to: Routes.exception_path(@conn, :timeout) %></li>
+  <li><%= link "template", to: Routes.exception_path(@conn, :template) %></li>
+  <li><%= link "template_error", to: Routes.exception_path(@conn, :template_error) %></li>
+  <li><%= link "ecto_no_results", to: Routes.exception_path(@conn, :ecto_no_results) %></li>
+</ul>
