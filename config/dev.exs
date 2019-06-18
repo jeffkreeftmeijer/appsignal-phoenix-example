@@ -1,5 +1,14 @@
 use Mix.Config
 
+# Configure your database
+config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "appsignal_phoenix_example_dev",
+  hostname: "localhost",
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -49,10 +58,10 @@ config :appsignal_phoenix_example, AppsignalPhoenixExampleWeb.Endpoint,
 config :appsignal_phoenix_example, AppsignalPhoenixExampleWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/appsignal_phoenix_example_web/views/.*(ex)$},
-      ~r{lib/appsignal_phoenix_example_web/templates/.*(eex)$}
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
+      ~r"lib/appsignal_phoenix_example_web/{live,views}/.*(ex)$",
+      ~r"lib/appsignal_phoenix_example_web/templates/.*(eex)$"
     ]
   ]
 
@@ -65,13 +74,5 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-# Configure your database
-config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "appsignal_phoenix_example_dev",
-  hostname: "localhost",
-  pool_size: 10
 
 config :appsignal, :config, active: true
