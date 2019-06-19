@@ -14,6 +14,12 @@ config :appsignal_phoenix_example, AppsignalPhoenixExampleWeb.Endpoint,
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
+config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  ssl: true,
+  pool_size: 2
+
 # Do not print debug messages in production
 config :logger, level: :info
 
