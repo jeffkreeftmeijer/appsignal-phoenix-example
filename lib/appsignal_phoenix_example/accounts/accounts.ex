@@ -35,7 +35,10 @@ defmodule AppsignalPhoenixExample.Accounts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id) do
+    user = Repo.get!(User, id)
+    Repo.preload(user, :jobs)
+  end
 
   @doc """
   Creates a user.

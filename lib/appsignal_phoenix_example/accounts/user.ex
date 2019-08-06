@@ -2,9 +2,11 @@ defmodule AppsignalPhoenixExample.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias AppsignalPhoenixExample.Job
 
   schema "users" do
     field :name, :string
+    has_many :jobs, Job
 
     timestamps()
   end
