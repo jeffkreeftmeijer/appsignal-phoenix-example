@@ -13,6 +13,12 @@ defmodule AppsignalPhoenixExampleWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", AppsignalPhoenixExampleWeb do
+    pipe_through :api
+
+    post "/", PageController, :json
+  end
+
   scope "/", AppsignalPhoenixExampleWeb do
     pipe_through :browser
 

@@ -4,4 +4,8 @@ defmodule AppsignalPhoenixExampleWeb.PageController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  def json(conn, params) do
+    render(conn, "index.json", params: params)
+  end
 end
