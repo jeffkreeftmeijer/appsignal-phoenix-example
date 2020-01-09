@@ -32,6 +32,8 @@ defmodule AppsignalPhoenixExampleWeb.Router do
     get "/exceptions/template", ExceptionController, :template
     get "/exceptions/template_error", ExceptionController, :template_error
     get "/exceptions/ecto_no_results", ExceptionController, :ecto_no_results
+
+    live "/clock", ClockLive
   end
 
   # Other scopes may use custom stacks.
