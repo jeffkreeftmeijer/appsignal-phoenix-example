@@ -6,6 +6,11 @@ defmodule AppsignalPhoenixExampleWeb.PageController do
     render(conn, "index.html")
   end
 
+  def overwritten(conn, _params) do
+    Appsignal.Transaction.set_action("AppsignalPhoenixExample.OverwrittenController#overwritten")
+    render(conn, "index.html")
+  end
+
   def decorators(conn, _params) do
     decorated()
 
