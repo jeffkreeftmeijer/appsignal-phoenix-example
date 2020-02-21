@@ -1,5 +1,6 @@
 defmodule AppsignalPhoenixExampleWeb.RoomChannel do
   use Phoenix.Channel
+  use Appsignal.Instrumentation.Decorators
 
   def join("room:lobby", _message, socket) do
     {:ok, socket}
@@ -9,6 +10,7 @@ defmodule AppsignalPhoenixExampleWeb.RoomChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
+  @decorate channel_action()
   def handle_in("new_msg", %{"body" => body}, socket) do
     broadcast!(socket, "new_msg", %{body: body})
     {:noreply, socket}
