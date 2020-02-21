@@ -11,6 +11,12 @@ defmodule AppsignalPhoenixExampleWeb.RoomChannel do
   end
 
   @decorate channel_action()
+  def handle_in("new_msg", %{"body" => "crash"}, socket) do
+    raise "CRASH!"
+    {:noreply, socket}
+  end
+
+  @decorate channel_action()
   def handle_in("new_msg", %{"body" => body}, socket) do
     broadcast!(socket, "new_msg", %{body: body})
     {:noreply, socket}
