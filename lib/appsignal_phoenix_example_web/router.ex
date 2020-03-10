@@ -19,6 +19,7 @@ defmodule AppsignalPhoenixExampleWeb.Router do
     get "/", PageController, :index
     get "/overwritten", PageController, :overwritten
     get "/decorators", PageController, :decorators
+    forward "/plug", AppsignalPlugExample, greeting: "Hello"
 
     resources "/users", UserController
 
