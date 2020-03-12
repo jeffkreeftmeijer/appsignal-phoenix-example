@@ -44,7 +44,7 @@ defmodule AppsignalPhoenixExample.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:appsignal, "~> 1.0"},
-      {:phoenix_live_view, "~> 0.4.0"}
+      {:phoenix_live_view, "~> 0.9.0"}
     ]
   end
 
