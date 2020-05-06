@@ -45,7 +45,7 @@ defmodule AppsignalPhoenixExample.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:appsignal, github: "appsignal/appsignal-elixir", branch: "tracing"}
+      {:appsignal_phoenix, path: "~/Appsignal/appsignal-phoenix"}
     ]
   end
 
