@@ -9,8 +9,11 @@ defmodule AppsignalPhoenixExampleWeb.RoomChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  def handle_in("new_msg", %{"body" => body}, socket) do
-    broadcast!(socket, "new_msg", %{body: body})
-    {:noreply, socket}
+  def handle_in("new_msg", %{"body" => body} = params, socket) do
+    Appsignal.Phoenix.Channel.instrument(__MODULE__, "new_msg", params, socket, fn ->
+      broadcast!(socket, "new_msg", %{body: body})
+      :timer.sleep(1_000)
+      {:noreply, socket}
+    end)
   end
 end
