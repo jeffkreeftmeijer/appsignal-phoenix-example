@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :appsignal_phoenix_example, AppsignalPhoenixExample.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "test",
+  password: "test",
   database: "appsignal_phoenix_example_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
