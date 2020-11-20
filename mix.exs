@@ -45,7 +45,8 @@ defmodule AppsignalPhoenixExample.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:appsignal_phoenix, "~> 2.0.0"}
+      {:appsignal_phoenix, path: "~/Appsignal/appsignal-elixir-phoenix"},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 
